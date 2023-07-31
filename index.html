@@ -106,7 +106,7 @@
     <section id="contact" class="contact">
         <h2>Contact <span>Angkringan404</span></h2>
         <div class="row">
-            <form action="send.php" method="post" target="_blank">
+            <form action="send.php" method="post" target="_blank" id="myForm">
                 <div class="input-group">
                     <i data-feather="users"></i>
                     <input type="text" placeholder="Nama" name="nama">
@@ -157,5 +157,30 @@
 
     <!-- JS -->
     <script src="js/script.js"></script>
+
+    <!-- JavaScript code -->
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+        
+        // Get form input values
+        var nama = encodeURIComponent(document.querySelector('input[name="nama"]').value);
+        var email = encodeURIComponent(document.querySelector('input[name="email"]').value);
+        var nohp = encodeURIComponent(document.querySelector('input[name="nohp"]').value);
+        var alamat = encodeURIComponent(document.querySelector('input[name="alamat"]').value);
+    
+        // Replace the phone number with your desired WhatsApp number
+        var phone_number = "6281330282416";
+    
+        // Create the message with line breaks and proper URL encoding
+        var message = "Nama: " + nama + "%0AEmail: " + email + "%0ANO. HP: " + nohp + "%0AALAMAT: " + alamat;
+    
+        // WhatsApp API link for opening the WhatsApp app with the pre-filled message
+        var wa_link = "https://api.whatsapp.com/send?phone=" + phone_number + "&text=" + message;
+    
+        // Open the WhatsApp link in a new window
+        window.open(wa_link, "_blank");
+    });
+    </script>
 </body>
 </html>
