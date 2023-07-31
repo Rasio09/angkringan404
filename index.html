@@ -106,24 +106,24 @@
     <section id="contact" class="contact">
         <h2>Contact <span>Angkringan404</span></h2>
         <div class="row">
-                        <form action="">
+            <form action="send.php" method="post" target="_blank">
                 <div class="input-group">
                     <i data-feather="users"></i>
-                    <input type="text" placeholder="Nama">
+                    <input type="text" placeholder="Nama" name="nama">
                 </div>
                 <div class="input-group">
                     <i data-feather="mail"></i>
-                    <input type="text" placeholder="Email">
+                    <input type="text" placeholder="Email" name="email">
                 </div>
                 <div class="input-group">
                     <i data-feather="smartphone"></i>
-                    <input type="text" placeholder="No Hp">
+                    <input type="text" placeholder="No Hp" name="nohp">
                 </div>
                 <div class="input-group">
                     <i data-feather="map"></i>
-                    <input type="text" placeholder="Alamat">
+                    <input type="text" placeholder="Alamat" name="alamat">
                 </div>
-                <button type="submit" class="btn">Send</button>
+                <button type="submit" class="btn" name="submit">Send</button>
                 <button type="reset" class="rst">Reset</button>
             </form>
 
